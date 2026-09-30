@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { site } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -73,15 +74,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Shahinda Kazi — Ecommerce Consultant & Growth Specialist" },
+      { title: "Ecomalyst — Ecommerce Consultant & Growth Specialist" },
       {
         name: "description",
         content:
-          "Ecommerce consulting across marketplaces, D2C and quick commerce — revenue, performance marketing and operations.",
+          "Ecommerce consulting across marketplaces, D2C and ecommerce growth — revenue, performance marketing and operations.",
       },
-      { name: "author", content: "Shahinda Kazi" },
+      { name: "author", content: site.brandName },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: site.brandName },
+      { property: "og:url", content: site.siteUrl },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:url", content: site.siteUrl },
     ],
     links: [
       {

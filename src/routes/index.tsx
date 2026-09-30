@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { site } from "@/lib/site";
 import { Header } from "@/components/site/Header";
 import { FloatingWhatsApp } from "@/components/site/WhatsAppButton";
 import {
@@ -7,15 +8,14 @@ import {
   Services,
   Impact,
   Toolkit,
-  Experience,
   FinalCta,
   Contact,
   Footer,
 } from "@/components/site/sections";
 
-const title = "Shahinda Kazi — Ecommerce Consultant & Growth Specialist";
+const title = "Ecomalyst — Ecommerce Consultant & Growth Specialist";
 const description =
-  "Ecommerce consultant with 11+ years of hands-on experience across marketplaces, D2C and quick commerce. Marketplace growth, performance marketing and ecommerce operations.";
+  "Ecommerce consultant with 11+ years of hands-on experience across marketplaces, D2C and ecommerce growth. Marketplace growth, performance marketing and ecommerce operations.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,8 +25,12 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: site.siteUrl },
+      { property: "og:site_name", content: site.brandName },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:url", content: site.siteUrl },
     ],
+    links: [{ rel: "canonical", href: site.siteUrl }],
   }),
   component: Index,
 });
@@ -41,7 +45,6 @@ function Index() {
         <Services />
         <Impact />
         <Toolkit />
-        <Experience />
         <FinalCta />
         <Contact />
       </main>

@@ -77,7 +77,6 @@ export function ContactForm() {
             Select an area
           </option>
           <option>Marketplace Management</option>
-          <option>Quick Commerce Strategy</option>
           <option>Performance Marketing & PPC</option>
           <option>Support Operations</option>
           <option>Inventory & Pricing Strategy</option>

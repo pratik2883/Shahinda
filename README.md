@@ -1,6 +1,6 @@
-# Shahinda Kazi — Portfolio & Consultancy
+# Ecomalyst — Ecommerce Consulting
 
-Ecommerce consultant with 11+ years of hands-on experience across marketplaces, D2C and quick commerce.
+Ecommerce consulting brand (ecomalyst.in). Ecommerce consultant with 11+ years of hands-on experience across marketplaces, D2C and ecommerce growth.
 
 ## Development
 

@@ -15,10 +15,11 @@ import {
 import { Reveal } from "./Reveal";
 import { waLink } from "./WhatsAppButton";
 import { ContactForm } from "./ContactForm";
+import { site } from "@/lib/site";
 
-const EMAIL = "shahindak2@gmail.com";
-const PHONE = "+91 89768 90885";
-const LINKEDIN = "https://www.linkedin.com/search/results/people/?keywords=Shahinda%20Kazi";
+const EMAIL = site.email;
+const PHONE = site.phone;
+const LINKEDIN = site.linkedinUrl;
 
 const Shell = ({
   id,
@@ -81,7 +82,8 @@ function Cta({
     primary: "bg-primary text-primary-foreground hover:opacity-90",
     lime: "bg-lime text-primary hover:opacity-90",
     ghost: "text-foreground underline-offset-8 hover:underline",
-    ghostDark: "border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10",
+    ghostDark:
+      "border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10",
   }[variant];
   return (
     <a
@@ -126,7 +128,10 @@ export function Hero() {
             </p>
             <p className="mt-2 text-sm text-ink-foreground/70">Revenue Growth</p>
             <div className="absolute inset-x-8 bottom-8 h-1/2 sm:inset-x-10 sm:bottom-10">
-              <div className="absolute inset-0 flex flex-col justify-between opacity-15" aria-hidden="true">
+              <div
+                className="absolute inset-0 flex flex-col justify-between opacity-15"
+                aria-hidden="true"
+              >
                 {[0, 1, 2, 3].map((line) => (
                   <span key={line} className="h-px w-full bg-lime" />
                 ))}
@@ -153,7 +158,10 @@ export function Hero() {
                 <circle cx="400" cy="9" r="5" fill="currentColor" className="chart-end-dot" />
               </svg>
             </div>
-            <div className="absolute inset-x-8 bottom-8 flex h-1/2 items-end gap-2 opacity-25 sm:inset-x-10 sm:bottom-10" aria-hidden="true">
+            <div
+              className="absolute inset-x-8 bottom-8 flex h-1/2 items-end gap-2 opacity-25 sm:inset-x-10 sm:bottom-10"
+              aria-hidden="true"
+            >
               {bars.map((h, i) => (
                 <div
                   key={i}
@@ -185,15 +193,19 @@ export function About() {
             Growth is more than a number. <span className="text-lime">It's a system.</span>
           </h2>
         </Reveal>
-        <Reveal delay={120} className="space-y-6 text-lg leading-relaxed text-ink-foreground/75 lg:pt-12">
+        <Reveal
+          delay={120}
+          className="space-y-6 text-lg leading-relaxed text-ink-foreground/75 lg:pt-12"
+        >
           <p>
-            I'm a results-driven ecommerce and business development leader with 11+ years across
-            customer support operations, marketplaces, D2C websites and quick commerce platforms.
+            I'm a results-driven ecommerce and digital marketing leader with 11+ years of experience
+            building and scaling D2C brands.
           </p>
           <p>
-            I bring the commercial and operational pieces together — from dispatch and logistics to
-            performance marketing, inventory strategy and customer support teams across calls,
-            email and chat.
+            I focus on the growth engine behind a brand — performance marketing, marketplace
+            strategy, and inventory &amp; pricing decisions that turn traffic into revenue. From
+            launching a D2C storefront to scaling it profitably, I bring the strategic and marketing
+            pieces together to build sustainable, measurable growth.
           </p>
           <div className="pt-4">
             <Cta href="#contact" variant="lime">
@@ -207,13 +219,36 @@ export function About() {
 }
 
 const services = [
-  { icon: Store, t: "Marketplace Management", d: "Build stronger marketplace presence across Amazon, Flipkart, Ajio, Myntra and beyond." },
-  { icon: Zap, t: "Quick Commerce Strategy", d: "Win the last mile with thoughtful assortment, availability and platform strategy." },
-  { icon: Target, t: "Performance Marketing & PPC", d: "Turn ad spend into profitable growth across Amazon Ads, PLA, Google and Meta." },
-  { icon: Headphones, t: "Support Operations", d: "Set up customer-first support systems, workflows and high-performing teams." },
-  { icon: Boxes, t: "Inventory & Pricing Strategy", d: "Balance availability, margin and velocity with sharper planning and pricing." },
-  { icon: Globe, t: "D2C Website & GTM", d: "Shape a clearer go-to-market plan and a digital storefront built to convert." },
-  { icon: FileSearch, t: "Catalog & PDP Optimization", d: "Make every product page easier to find, understand and choose." },
+  {
+    icon: Store,
+    t: "Marketplace Management",
+    d: "Build stronger marketplace presence across Amazon, Flipkart, Ajio, Myntra and beyond.",
+  },
+  {
+    icon: Target,
+    t: "Performance Marketing & PPC",
+    d: "Turn ad spend into profitable growth across Amazon Ads, PLA, Google and Meta.",
+  },
+  {
+    icon: Headphones,
+    t: "Support Operations",
+    d: "Set up customer-first support systems, workflows and high-performing teams.",
+  },
+  {
+    icon: Boxes,
+    t: "Inventory & Pricing Strategy",
+    d: "Balance availability, margin and velocity with sharper planning and pricing.",
+  },
+  {
+    icon: Globe,
+    t: "D2C Website & GTM",
+    d: "Shape a clearer go-to-market plan and a digital storefront built to convert.",
+  },
+  {
+    icon: FileSearch,
+    t: "Catalog & PDP Optimization",
+    d: "Make every product page easier to find, understand and choose.",
+  },
 ];
 
 export function Services() {
@@ -243,7 +278,7 @@ export function Services() {
         ))}
         <a
           href="#contact"
-          className="group flex flex-col justify-between border-b border-r border-border bg-primary p-8 text-primary-foreground"
+          className="group flex flex-col justify-between border-b border-r border-border bg-primary p-8 text-primary-foreground sm:col-span-2"
         >
           <span className="eyebrow !text-lime">Not sure where to start?</span>
           <span className="mt-14 flex items-center gap-2 font-display text-xl">
@@ -269,7 +304,10 @@ const metrics = [
 function MetricChart({ index }: { index: number }) {
   if (index % 3 === 1) {
     return (
-      <div className="metric-chart absolute inset-x-6 bottom-5 flex h-20 items-end gap-1.5 opacity-20" aria-hidden="true">
+      <div
+        className="metric-chart absolute inset-x-6 bottom-5 flex h-20 items-end gap-1.5 opacity-20"
+        aria-hidden="true"
+      >
         {[28, 48, 42, 64, 76, 68, 94].map((height, barIndex) => (
           <span
             key={height + barIndex}
@@ -283,7 +321,10 @@ function MetricChart({ index }: { index: number }) {
 
   if (index % 3 === 2) {
     return (
-      <div className="metric-chart absolute inset-x-5 bottom-5 grid h-20 grid-cols-10 gap-2 opacity-20" aria-hidden="true">
+      <div
+        className="metric-chart absolute inset-x-5 bottom-5 grid h-20 grid-cols-10 gap-2 opacity-20"
+        aria-hidden="true"
+      >
         {Array.from({ length: 40 }, (_, dotIndex) => (
           <span
             key={dotIndex}
@@ -302,8 +343,18 @@ function MetricChart({ index }: { index: number }) {
       preserveAspectRatio="none"
       className="metric-chart absolute inset-x-5 bottom-4 h-24 w-[calc(100%-2.5rem)] text-gold opacity-25"
     >
-      <path d="M0 88 L46 77 L82 82 L123 59 L160 65 L203 35 L244 43 L284 17 L320 7" fill="none" stroke="currentColor" strokeWidth="2" className="chart-line-draw" pathLength="1" />
-      <path d="M0 88 L46 77 L82 82 L123 59 L160 65 L203 35 L244 43 L284 17 L320 7 L320 100 L0 100 Z" className="fill-gold/15" />
+      <path
+        d="M0 88 L46 77 L82 82 L123 59 L160 65 L203 35 L244 43 L284 17 L320 7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="chart-line-draw"
+        pathLength="1"
+      />
+      <path
+        d="M0 88 L46 77 L82 82 L123 59 L160 65 L203 35 L244 43 L284 17 L320 7 L320 100 L0 100 Z"
+        className="fill-gold/15"
+      />
     </svg>
   );
 }
@@ -329,12 +380,16 @@ export function Impact() {
             <div className="relative z-10 flex min-h-full flex-1 flex-col justify-between">
               <p
                 className={`font-display font-semibold tracking-tight ${
-                  i === 0 ? "text-7xl text-lime lg:text-8xl" : "text-3xl text-foreground lg:text-4xl"
+                  i === 0
+                    ? "text-7xl text-lime lg:text-8xl"
+                    : "text-3xl text-foreground lg:text-4xl"
                 }`}
               >
                 {m.v}
               </p>
-              <p className={`mt-6 text-sm ${i === 0 ? "text-ink-foreground/70" : "text-muted-foreground"}`}>
+              <p
+                className={`mt-6 text-sm ${i === 0 ? "text-ink-foreground/70" : "text-muted-foreground"}`}
+              >
                 {m.l}
               </p>
             </div>
@@ -346,10 +401,20 @@ export function Impact() {
 }
 
 const tools = [
-  "Customer Support Management", "Marketplace Management", "Quick Commerce", "Amazon Ads",
-  "Flipkart PLA", "Performance Marketing", "PPC Campaigns", "Inventory Planning",
-  "Pricing Strategy", "Vendor Management", "Catalog Optimization", "SEO / SEM",
-  "P&L Management", "Data Analysis", "GTM Strategy",
+  "Customer Support Management",
+  "Marketplace Management",
+  "Amazon Ads",
+  "Flipkart PLA",
+  "Performance Marketing",
+  "PPC Campaigns",
+  "Inventory Planning",
+  "Pricing Strategy",
+  "Vendor Management",
+  "Catalog Optimization",
+  "SEO / SEM",
+  "P&L Management",
+  "Data Analysis",
+  "GTM Strategy",
 ];
 
 export function Toolkit() {
@@ -377,51 +442,6 @@ export function Toolkit() {
   );
 }
 
-const roles = [
-  { r: "Business Development Manager", c: "Viaterra Gears", y: "2026 — Present", now: true },
-  { r: "Sr. Ecommerce Manager", c: "Priority Bags", y: "2025 — 2026" },
-  { r: "Ecommerce Manager", c: "Scott Sports", y: "2017 — 2025" },
-  { r: "Online Manager", c: "Doodle Collection", y: "2016 — 2017" },
-  { r: "Sr. Category Executive", c: "Big Bazaar Direct", y: "2015 — 2016" },
-  { r: "Ecommerce Executive", c: "Mitashi Edutainment", y: "2013 — 2015" },
-  { r: "Backend Executive", c: "Mitashi Edutainment", y: "2010 — 2013" },
-];
-
-export function Experience() {
-  return (
-    <Shell id="experience" className="border-t border-border py-24 lg:py-32">
-      <div className="grid gap-14 lg:grid-cols-[1fr_1.3fr]">
-        <Reveal>
-          <p className="eyebrow">Experience</p>
-          <h2 className="mt-5 text-4xl leading-[1.05] text-foreground sm:text-5xl">
-            11+ years across ecommerce, marketplaces, D2C and growth.
-          </h2>
-        </Reveal>
-        <Reveal delay={120}>
-          <ul className="border-t border-border">
-            {roles.map((x) => (
-              <li
-                key={x.r + x.y}
-                className="grid grid-cols-[1fr_auto] items-baseline gap-4 border-b border-border py-5 sm:grid-cols-[1.3fr_1fr_auto]"
-              >
-                <span className="flex items-center gap-3 font-medium text-foreground">
-                  {x.now && <span className="h-2 w-2 shrink-0 rounded-full bg-gold" />}
-                  {x.r}
-                </span>
-                <span className="hidden text-sm text-muted-foreground sm:block">{x.c}</span>
-                <span className="text-xs tabular-nums text-muted-foreground">
-                  <span className="sm:hidden">{x.c} · </span>
-                  {x.y}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </div>
-    </Shell>
-  );
-}
-
 export function FinalCta() {
   return (
     <Shell className="bg-ink py-24 text-ink-foreground lg:py-36">
@@ -437,7 +457,7 @@ export function FinalCta() {
             Book a Consultation
           </Cta>
           <Cta href={waLink} variant="ghostDark" external>
-            WhatsApp Shahinda
+            WhatsApp
           </Cta>
         </div>
       </Reveal>
@@ -449,7 +469,7 @@ export function Contact() {
   const items = [
     { icon: Mail, l: "Email", v: EMAIL, h: `mailto:${EMAIL}` },
     { icon: Phone, l: "Phone", v: PHONE, h: "tel:+918976890885" },
-    { icon: Linkedin, l: "LinkedIn", v: "Shahinda Kazi", h: LINKEDIN },
+    { icon: Linkedin, l: "LinkedIn", v: site.linkedinLabel, h: LINKEDIN },
     { icon: MapPin, l: "Location", v: "India" },
   ];
   return (
@@ -469,7 +489,12 @@ export function Contact() {
                 <i.icon className="h-4 w-4 text-gold" strokeWidth={1.5} />
                 <span className="eyebrow w-24">{i.l}</span>
                 {i.h ? (
-                  <a href={i.h} target={i.h.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="text-sm text-foreground hover:text-gold">
+                  <a
+                    href={i.h}
+                    target={i.h.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="text-sm text-foreground hover:text-gold"
+                  >
                     {i.v}
                   </a>
                 ) : (
@@ -492,16 +517,27 @@ export function Footer() {
     <footer className="border-t border-border py-12">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 sm:px-8 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-display text-xl font-semibold text-foreground">Shahinda Kazi</p>
-          <p className="mt-1 text-sm text-muted-foreground">Ecommerce Consultant &amp; Growth Specialist</p>
+          <p className="font-display text-xl font-semibold text-foreground">{site.brandName}</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Ecommerce Consultant &amp; Growth Specialist
+          </p>
           <p className="mt-4 text-xs tracking-wide text-muted-foreground">
-            Marketplace • D2C • Quick Commerce • Ecommerce Growth
+            Marketplace • D2C • Ecommerce Growth
           </p>
         </div>
         <div className="flex flex-wrap gap-6 text-sm text-foreground">
-          <a href={`mailto:${EMAIL}`} className="hover:text-gold">Email</a>
-          <a href="tel:+918976890885" className="hover:text-gold">Phone</a>
-          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="hover:text-gold">LinkedIn</a>
+          <a href={`mailto:${EMAIL}`} className="hover:text-gold">
+            Email
+          </a>
+          <a href="tel:+918976890885" className="hover:text-gold">
+            Phone
+          </a>
+          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
+            LinkedIn
+          </a>
+          <a href="/privacy-policy" className="hover:text-gold">
+            Privacy Policy
+          </a>
         </div>
       </div>
     </footer>

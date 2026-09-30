@@ -1,8 +1,6 @@
-const WA_NUMBER = "918976890885";
-const WA_TEXT = encodeURIComponent(
-  "Hi Shahinda, I found your website and would like to discuss my ecommerce business.",
-);
-export const waLink = `https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`;
+import { waLink } from "@/lib/site";
+
+export { waLink };
 
 export function WhatsAppIcon({ className }: { className?: string }) {
   return (

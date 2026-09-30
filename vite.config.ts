@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Production deploy target: Vercel (ecomalyst.in). Nitro's "vercel" preset emits the
+  // serverless-function output Vercel expects; Vercel auto-detects Nitro with zero config.
+  nitro: { preset: "vercel" },
 });
