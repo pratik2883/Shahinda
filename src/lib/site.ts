@@ -15,12 +15,12 @@ export const site = {
   /** Contact email (Contact section + Footer) — TEMPORARY until client finalizes domain email */
   email: "shahindak2@gmail.com",
   /** Display phone number (Contact section) — TEMPORARY until client provides new SIM */
-  phone: "+91 89768 90885",
+  phone: "+91 95112 66312",
   /** tel: / wa.me digits, no "+" or spaces */
-  phoneDigits: "918976890885",
+  phoneDigits: "919511266312",
   /** LinkedIn — currently a keyword-search URL, NOT a profile (client undecided) */
   linkedinUrl: "https://www.linkedin.com/search/results/people/?keywords=Shahinda%20Kazi",
-  linkedinLabel: "Shahinda Kazi",
+  linkedinLabel: "Shahinda",
 } as const;
 
 /** Pre-filled WhatsApp deep link used by the floating widget and Final CTA button. */

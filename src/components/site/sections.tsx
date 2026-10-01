@@ -481,7 +481,7 @@ export function FinalCta() {
 export function Contact() {
   const items = [
     { icon: Mail, l: "Email", v: EMAIL, h: `mailto:${EMAIL}` },
-    { icon: Phone, l: "Phone", v: PHONE, h: "tel:+918976890885" },
+    { icon: Phone, l: "Phone", v: PHONE, h: "tel:+919511266312" },
     { icon: Linkedin, l: "LinkedIn", v: site.linkedinLabel, h: LINKEDIN },
     { icon: MapPin, l: "Location", v: "India" },
   ];
@@ -542,7 +542,7 @@ export function Footer() {
           <a href={`mailto:${EMAIL}`} className="hover:text-gold">
             Email
           </a>
-          <a href="tel:+918976890885" className="hover:text-gold">
+          <a href="tel:+919511266312" className="hover:text-gold">
             Phone
           </a>
           <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="hover:text-gold">

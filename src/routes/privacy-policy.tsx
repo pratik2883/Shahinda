@@ -170,7 +170,7 @@ function PrivacyPolicy() {
 
         <div className="mt-10 space-y-10 border-t border-border pt-10 text-base leading-relaxed text-muted-foreground">
           <p>
-            This Privacy Policy describes how Shahinda Kazi (&quot;I&quot;, &quot;me&quot;,
+            This Privacy Policy describes how Shahinda (&quot;I&quot;, &quot;me&quot;,
             &quot;my&quot;) collects, uses, and protects information when you visit this website
             (the &quot;Site&quot;) or contact me through it.
           </p>
@@ -194,7 +194,7 @@ function PrivacyPolicy() {
             <h2 className="text-2xl text-foreground sm:text-3xl">10. Contact</h2>
             <div className="mt-4 space-y-1">
               <p>If you have questions about this Privacy Policy, contact:</p>
-              <p className="pt-2 font-medium text-foreground">Shahinda Kazi</p>
+              <p className="pt-2 font-medium text-foreground">Shahinda</p>
               <p>
                 Email:{" "}
                 <a
@@ -207,10 +207,10 @@ function PrivacyPolicy() {
               <p>
                 Phone:{" "}
                 <a
-                  href="tel:+918976890885"
+                  href="tel:+919511266312"
                   className="text-foreground underline-offset-4 hover:text-gold hover:underline"
                 >
-                  +91 89768 90885
+                  +91 95112 66312
                 </a>
               </p>
               <p>Location: India</p>
