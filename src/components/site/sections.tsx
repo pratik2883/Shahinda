@@ -377,6 +377,15 @@ export function Impact() {
             }`}
           >
             <MetricChart index={i} />
+            {/* gradient overlay so description text is readable over decorative charts */}
+            <div
+              className={`pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-2/3 ${
+                i === 0
+                  ? "bg-gradient-to-t from-ink via-ink/90 to-transparent"
+                  : "bg-gradient-to-t from-background via-background/90 to-transparent"
+              }`}
+              aria-hidden="true"
+            />
             <div className="relative z-10 flex min-h-full flex-1 flex-col justify-between">
               <p
                 className={`font-display font-semibold tracking-tight ${
@@ -388,7 +397,11 @@ export function Impact() {
                 {m.v}
               </p>
               <p
-                className={`mt-6 text-sm ${i === 0 ? "text-ink-foreground/70" : "text-muted-foreground"}`}
+                className={`mt-6 text-sm font-medium leading-snug ${
+                  i === 0
+                    ? "text-ink-foreground/85"
+                    : "text-foreground/75"
+                }`}
               >
                 {m.l}
               </p>
