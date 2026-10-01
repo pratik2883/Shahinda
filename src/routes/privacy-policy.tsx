@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/sections";
+import { site } from "@/lib/site";
 
 const title = "Privacy Policy | Ecomalyst";
 const description =
@@ -198,10 +199,10 @@ function PrivacyPolicy() {
               <p>
                 Email:{" "}
                 <a
-                  href="mailto:shahindak2@gmail.com"
+                  href={`mailto:${site.email}`}
                   className="text-foreground underline-offset-4 hover:text-gold hover:underline"
                 >
-                  shahindak2@gmail.com
+                  {site.email}
                 </a>
               </p>
               <p>

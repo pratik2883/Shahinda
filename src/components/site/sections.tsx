@@ -9,7 +9,6 @@ import {
   FileSearch,
   Mail,
   Phone,
-  Linkedin,
   MapPin,
 } from "lucide-react";
 import { Reveal } from "./Reveal";
@@ -19,7 +18,6 @@ import { site } from "@/lib/site";
 
 const EMAIL = site.email;
 const PHONE = site.phone;
-const LINKEDIN = site.linkedinUrl;
 
 const Shell = ({
   id,
@@ -482,7 +480,6 @@ export function Contact() {
   const items = [
     { icon: Mail, l: "Email", v: EMAIL, h: `mailto:${EMAIL}` },
     { icon: Phone, l: "Phone", v: PHONE, h: "tel:+919511266312" },
-    { icon: Linkedin, l: "LinkedIn", v: site.linkedinLabel, h: LINKEDIN },
     { icon: MapPin, l: "Location", v: "India" },
   ];
   return (
@@ -544,9 +541,6 @@ export function Footer() {
           </a>
           <a href="tel:+919511266312" className="hover:text-gold">
             Phone
-          </a>
-          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
-            LinkedIn
           </a>
           <a href="/privacy-policy" className="hover:text-gold">
             Privacy Policy

@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Check } from "lucide-react";
+import { site } from "@/lib/site";
 
 const fieldClass =
   "w-full border-b border-border bg-transparent py-3 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary";
@@ -35,25 +36,44 @@ function Field({
 }
 
 export function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const [emailDraftStarted, setEmailDraftStarted] = useState(false);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    const formData = new FormData(e.currentTarget);
+    const fields = [
+      ["Name", "name"],
+      ["Email", "email"],
+      ["Phone", "phone"],
+      ["Business / Company", "company"],
+      ["Website / Store URL", "website"],
+      ["Area of help", "need"],
+      ["Message", "message"],
+    ] as const;
+    const body = fields
+      .map(([label, name]) => `${label}: ${formData.get(name) || "Not provided"}`)
+      .join("\n");
+    const subject = `Website enquiry from ${formData.get("name")}`;
+
+    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setEmailDraftStarted(true);
   }
 
-  if (sent) {
+  if (emailDraftStarted) {
     return (
       <div className="flex min-h-72 flex-col items-center justify-center border border-border bg-card px-6 py-20 text-center">
         <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
           <Check className="h-5 w-5" />
         </span>
         <h3 className="mt-6 text-2xl text-foreground">
-          Thank you. Your enquiry has been received.
+          Your enquiry is ready to send.
         </h3>
         <p className="mt-3 max-w-md text-sm text-muted-foreground">
-          I'll be in touch shortly to understand your ecommerce goals and challenges.
+          Your email app should open with the details filled in. Send the email to complete your enquiry.
         </p>
+        <a href={`mailto:${site.email}`} className="mt-4 text-sm text-foreground underline underline-offset-4">
+          Open an email to {site.email}
+        </a>
       </div>
     );
   }

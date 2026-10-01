@@ -2,9 +2,7 @@
  * Centralized site configuration — single source of truth for identity/contact values.
  *
  * Brand/domain (finalized by client): Ecomalyst — https://ecomalyst.in/
- * NOTE: Contact email, phone and LinkedIn are NOT finalized yet — the values below
- * are temporary. When the client provides the new SIM, domain email and LinkedIn,
- * update them HERE ONLY. Do NOT invent placeholder values.
+ * Contact values are maintained here so the site has one source of truth.
  */
 
 export const site = {
@@ -12,15 +10,12 @@ export const site = {
   brandName: "Ecomalyst",
   /** Production site URL (canonical, Open Graph) — trailing slash */
   siteUrl: "https://ecomalyst.in/",
-  /** Contact email (Contact section + Footer) — TEMPORARY until client finalizes domain email */
-  email: "shahindak2@gmail.com",
+  /** Contact email (Contact section, Footer, and Privacy Policy) */
+  email: "shahinda@ecomalyst.com",
   /** Display phone number (Contact section) — TEMPORARY until client provides new SIM */
   phone: "+91 95112 66312",
   /** tel: / wa.me digits, no "+" or spaces */
   phoneDigits: "919511266312",
-  /** LinkedIn — currently a keyword-search URL, NOT a profile (client undecided) */
-  linkedinUrl: "https://www.linkedin.com/search/results/people/?keywords=Shahinda%20Kazi",
-  linkedinLabel: "Shahinda",
 } as const;
 
 /** Pre-filled WhatsApp deep link used by the floating widget and Final CTA button. */
