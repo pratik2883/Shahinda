@@ -1,0 +1,210 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-lime: var(--lime);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --shadow-soft: var(--shadow-soft);
+  --shadow-card: var(--shadow-card);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.975 0.006 95);
+  --foreground: oklch(0.2 0.02 150);
+  --card: oklch(0.987 0.006 85);
+  --card-foreground: oklch(0.235 0.012 60);
+  --popover: oklch(0.987 0.006 85);
+  --popover-foreground: oklch(0.235 0.012 60);
+  --primary: oklch(0.27 0.05 155);
+  --primary-foreground: oklch(0.975 0.008 85);
+  --secondary: oklch(0.945 0.012 85);
+  --secondary-foreground: oklch(0.29 0.02 60);
+  --muted: oklch(0.945 0.012 85);
+  --muted-foreground: oklch(0.52 0.014 65);
+  --accent: oklch(0.93 0.018 85);
+  --accent-foreground: oklch(0.29 0.02 60);
+  --gold: oklch(0.55 0.1 125);
+  --lime: oklch(0.86 0.13 120);
+  --ink: oklch(0.24 0.045 155);
+  --ink-foreground: oklch(0.96 0.01 85);
+  --destructive: oklch(0.52 0.19 27);
+  --destructive-foreground: oklch(0.98 0.005 85);
+  --border: oklch(0.885 0.012 80);
+  --input: oklch(0.885 0.012 80);
+  --ring: oklch(0.27 0.05 155);
+  --shadow-soft: 0 10px 30px -18px oklch(0.235 0.012 60 / 0.35);
+  --shadow-card: 0 1px 2px oklch(0.235 0.012 60 / 0.04);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+  }
+}
+
+@utility eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+  font-weight: 500;
+}
+
+@utility rule-top {
+  border-top: 1px solid var(--color-border);
+}
+
+@keyframes chart-line-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes chart-bar-rise {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes chart-dot-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes chart-end-pulse {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+    transform-origin: center;
+  }
+}
+
+.chart-line-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.chart-bar-rise,
+.chart-dot {
+  opacity: 0;
+}
+
+.reveal-shown .chart-line-draw {
+  animation: chart-line-draw 1.8s cubic-bezier(0.22, 1, 0.36, 1) 200ms forwards;
+}
+
+.reveal-shown .chart-bar-rise {
+  animation-name: chart-bar-rise;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: forwards;
+}
+
+.reveal-shown .chart-dot {
+  animation-name: chart-dot-in;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: forwards;
+}
+
+.reveal-shown .chart-end-dot {
+  animation: chart-end-pulse 2.8s ease-in-out 1.8s infinite;
+}
+
+.metric-chart {
+  transition: opacity 500ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .metric-chart {
+  opacity: 0.38;
+  transform: translateY(-0.2rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-line-draw,
+  .chart-bar-rise,
+  .chart-dot,
+  .chart-end-dot {
+    animation: none !important;
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transform: none;
+  }
+
+  .metric-chart {
+    transition: none;
+  }
+}
