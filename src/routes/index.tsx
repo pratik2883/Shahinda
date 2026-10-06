@@ -7,15 +7,17 @@ import {
   About,
   Services,
   Impact,
+  Audience,
   Toolkit,
+  WhyEcomalyst,
   FinalCta,
   Contact,
   Footer,
 } from "@/components/site/sections";
 
-const title = "Ecomalyst — Ecommerce Consultant & Growth Specialist";
+const title = "Ecommerce Consultant & Growth Specialist | Ecomalyst";
 const description =
-  "Ecommerce consultant with 11+ years of hands-on experience across marketplaces, D2C and ecommerce growth. Marketplace growth, performance marketing and ecommerce operations.";
+  "Grow your ecommerce business with an experienced ecommerce consultant. Get expert help with D2C, marketplaces, PPC, performance marketing, catalog, pricing and operations.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,7 +46,9 @@ function Index() {
         <About />
         <Services />
         <Impact />
+        <Audience />
         <Toolkit />
+        <WhyEcomalyst />
         <FinalCta />
         <Contact />
       </main>

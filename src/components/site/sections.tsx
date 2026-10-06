@@ -7,6 +7,12 @@ import {
   Boxes,
   Globe,
   FileSearch,
+  ShoppingCart,
+  Building2,
+  TrendingUp,
+  Rocket,
+  Award,
+  BarChart3,
   Mail,
   Phone,
   MapPin,
@@ -103,8 +109,7 @@ export function Hero() {
         <Reveal>
           <p className="eyebrow">Independent Ecommerce Consultant</p>
           <h1 className="mt-6 text-[2.5rem] leading-[1] text-foreground sm:text-6xl lg:text-[4.4rem]">
-            I help ecommerce brands <span className="text-gold">scale revenue</span> and build
-            high-performing support operations.
+            Ecommerce Consultant for <span className="text-gold">D2C &amp; Marketplace</span> Growth
           </h1>
           <p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
             Scaling online revenue through marketplace strategy, performance marketing &amp;
@@ -188,7 +193,7 @@ export function About() {
         <Reveal>
           <p className="eyebrow !text-lime">01 / About</p>
           <h2 className="mt-5 text-4xl leading-[1.02] sm:text-5xl lg:text-6xl">
-            Growth is more than a number. <span className="text-lime">It's a system.</span>
+            Ecommerce Growth Strategy <span className="text-lime">Built Around Your Business</span>
           </h2>
         </Reveal>
         <Reveal
@@ -228,8 +233,13 @@ const services = [
     d: "Turn ad spend into profitable growth across Amazon Ads, PLA, Google and Meta.",
   },
   {
+    icon: Globe,
+    t: "D2C Ecommerce Strategy",
+    d: "Shape a clearer go-to-market plan and a digital storefront built to convert.",
+  },
+  {
     icon: Headphones,
-    t: "Support Operations",
+    t: "Ecommerce Operations",
     d: "Set up customer-first support systems, workflows and high-performing teams.",
   },
   {
@@ -238,13 +248,8 @@ const services = [
     d: "Balance availability, margin and velocity with sharper planning and pricing.",
   },
   {
-    icon: Globe,
-    t: "D2C Website & GTM",
-    d: "Shape a clearer go-to-market plan and a digital storefront built to convert.",
-  },
-  {
     icon: FileSearch,
-    t: "Catalog & PDP Optimization",
+    t: "Catalog & Product Page Optimization",
     d: "Make every product page easier to find, understand and choose.",
   },
 ];
@@ -254,7 +259,7 @@ export function Services() {
     <Shell id="services" className="py-24 lg:py-32">
       <SectionHead
         eyebrow="02 / What I do"
-        title={<>Practical expertise. Measurable momentum.</>}
+        title={<>Ecommerce Consulting Services</>}
         aside="Focused support for brands ready to turn scattered activity into a clear, profitable growth engine."
       />
       <div className="mt-16 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-4">
@@ -362,7 +367,7 @@ export function Impact() {
     <Shell id="impact" className="border-t border-border py-24 lg:py-32">
       <SectionHead
         eyebrow="03 / The impact"
-        title="Proof that clarity compounds."
+        title="Ecommerce Growth Results"
         aside="Outcomes from turning strategy into action — and action into a stronger business."
       />
       <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
@@ -396,9 +401,7 @@ export function Impact() {
               </p>
               <p
                 className={`mt-6 text-sm font-medium leading-snug ${
-                  i === 0
-                    ? "text-ink-foreground/85"
-                    : "text-foreground/75"
+                  i === 0 ? "text-ink-foreground/85" : "text-foreground/75"
                 }`}
               >
                 {m.l}
@@ -406,6 +409,69 @@ export function Impact() {
             </div>
           </Reveal>
         ))}
+      </div>
+    </Shell>
+  );
+}
+
+const audiences = [
+  {
+    icon: ShoppingCart,
+    t: "D2C Brands",
+    d: "Scale your own storefront with focused marketing, conversion and retention work.",
+  },
+  {
+    icon: Store,
+    t: "Amazon & Marketplace Sellers",
+    d: "Improve visibility, conversion and profitability across Amazon, Flipkart and more.",
+  },
+  {
+    icon: Building2,
+    t: "Small & Medium Businesses",
+    d: "Get practical, hands-on ecommerce help without building a full in-house team.",
+  },
+  {
+    icon: TrendingUp,
+    t: "Growing Ecommerce Brands",
+    d: "Turn early traction into consistent, compounding growth across channels.",
+  },
+  {
+    icon: Rocket,
+    t: "Businesses Launching Online",
+    d: "Launch on the right platforms with a clear plan from day one.",
+  },
+];
+
+export function Audience() {
+  return (
+    <Shell id="audience" className="border-t border-border py-24 lg:py-32">
+      <SectionHead
+        eyebrow="04 / Who I help"
+        title="Ecommerce Consulting for D2C & Online Brands"
+        aside="Whether you sell on marketplaces or your own storefront, the goal is the same: profitable, sustainable growth."
+      />
+      <div className="mt-16 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-4">
+        {audiences.map((a, i) => (
+          <Reveal
+            key={a.t}
+            delay={i * 50}
+            className="border-b border-r border-border p-8 transition-colors hover:bg-card"
+          >
+            <a.icon className="h-5 w-5 text-gold" strokeWidth={1.5} />
+            <h3 className="mt-10 text-xl leading-tight text-foreground">{a.t}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a.d}</p>
+          </Reveal>
+        ))}
+        <a
+          href="#contact"
+          className="group flex flex-col justify-between border-b border-r border-border bg-primary p-8 text-primary-foreground sm:col-span-2"
+        >
+          <span className="eyebrow !text-lime">Not sure where you fit?</span>
+          <span className="mt-14 flex items-center gap-2 font-display text-xl">
+            Let's talk anyway
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </span>
+        </a>
       </div>
     </Shell>
   );
@@ -433,7 +499,7 @@ export function Toolkit() {
     <Shell className="border-t border-border py-24 lg:py-28">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr]">
         <Reveal>
-          <p className="eyebrow">04 / Toolkit</p>
+          <p className="eyebrow">05 / Toolkit</p>
           <h2 className="mt-5 text-4xl leading-[1.05] text-foreground sm:text-5xl">
             The capabilities behind the work.
           </h2>
@@ -453,12 +519,75 @@ export function Toolkit() {
   );
 }
 
+export function WhyEcomalyst() {
+  const reasons = [
+    {
+      icon: Award,
+      t: "11+ Years of Ecommerce Experience",
+      d: "Hands-on experience building and scaling D2C brands and marketplace businesses.",
+    },
+    {
+      icon: Store,
+      t: "Marketplace & D2C Expertise",
+      d: "Deep working knowledge across Amazon, Flipkart, Ajio, Myntra and D2C storefronts.",
+    },
+    {
+      icon: BarChart3,
+      t: "Data-Driven Decision Making",
+      d: "Pricing, inventory, ads and catalog decisions backed by numbers, not guesswork.",
+    },
+    {
+      icon: Target,
+      t: "Performance Marketing Knowledge",
+      d: "Ad spend managed for profitable growth — across Amazon Ads, Google, Meta and PLA.",
+    },
+    {
+      icon: Headphones,
+      t: "Ecommerce Operations Expertise",
+      d: "Support systems, workflows and teams that keep customers coming back.",
+    },
+  ];
+
+  return (
+    <Shell className="border-t border-border py-24 lg:py-32">
+      <SectionHead
+        eyebrow="06 / Why Ecomalyst"
+        title="Why Choose Ecomalyst"
+        aside="One consultant across strategy, marketing and operations — with the track record to back it up."
+      />
+      <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+        {reasons.map((r, i) => (
+          <Reveal
+            key={r.t}
+            delay={i * 50}
+            className="bg-background p-8 transition-colors hover:bg-card"
+          >
+            <r.icon className="h-5 w-5 text-gold" strokeWidth={1.5} />
+            <h3 className="mt-10 text-xl leading-tight text-foreground">{r.t}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{r.d}</p>
+          </Reveal>
+        ))}
+        <a
+          href="#contact"
+          className="group flex flex-col justify-between bg-primary p-8 text-primary-foreground"
+        >
+          <span className="eyebrow !text-lime">Ready when you are</span>
+          <span className="mt-14 flex items-center gap-2 font-display text-xl">
+            Book a Consultation
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </span>
+        </a>
+      </div>
+    </Shell>
+  );
+}
+
 export function FinalCta() {
   return (
     <Shell className="bg-ink py-24 text-ink-foreground lg:py-36">
       <Reveal className="max-w-4xl">
         <h2 className="text-4xl leading-[1.02] sm:text-6xl lg:text-7xl">
-          Ready to turn ecommerce activity into <span className="text-lime">growth?</span>
+          Ready to Grow Your <span className="text-lime">Ecommerce Business?</span>
         </h2>
         <p className="mt-8 max-w-xl text-lg text-ink-foreground/70">
           Let's identify where your marketplace, D2C, marketing or operations can perform better.

@@ -65,13 +65,15 @@ export function ContactForm() {
         <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
           <Check className="h-5 w-5" />
         </span>
-        <h3 className="mt-6 text-2xl text-foreground">
-          Your enquiry is ready to send.
-        </h3>
+        <h3 className="mt-6 text-2xl text-foreground">Your enquiry is ready to send.</h3>
         <p className="mt-3 max-w-md text-sm text-muted-foreground">
-          Your email app should open with the details filled in. Send the email to complete your enquiry.
+          Your email app should open with the details filled in. Send the email to complete your
+          enquiry.
         </p>
-        <a href={`mailto:${site.email}`} className="mt-4 text-sm text-foreground underline underline-offset-4">
+        <a
+          href={`mailto:${site.email}`}
+          className="mt-4 text-sm text-foreground underline underline-offset-4"
+        >
           Open an email to {site.email}
         </a>
       </div>
