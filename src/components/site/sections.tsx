@@ -608,7 +608,7 @@ export function FinalCta() {
 export function Contact() {
   const items = [
     { icon: Mail, l: "Email", v: EMAIL, h: `mailto:${EMAIL}` },
-    { icon: Phone, l: "Phone", v: PHONE, h: "tel:+919511266312" },
+    { icon: Phone, l: "Phone", v: PHONE, h: `tel:+${site.phoneDigits}` },
     { icon: MapPin, l: "Location", v: "India" },
   ];
   return (
@@ -668,7 +668,7 @@ export function Footer() {
           <a href={`mailto:${EMAIL}`} className="hover:text-gold">
             Email
           </a>
-          <a href="tel:+919511266312" className="hover:text-gold">
+          <a href={`tel:+${site.phoneDigits}`} className="hover:text-gold">
             Phone
           </a>
           <a href="/privacy-policy" className="hover:text-gold">

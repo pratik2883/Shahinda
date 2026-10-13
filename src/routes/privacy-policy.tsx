@@ -7,6 +7,7 @@ import { site } from "@/lib/site";
 const title = "Privacy Policy | Ecomalyst";
 const description =
   "Privacy Policy for Ecomalyst covering enquiry information, cookies, analytics, advertising and communications.";
+const url = `${site.siteUrl}privacy-policy`;
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
@@ -16,11 +17,11 @@ export const Route = createFileRoute("/privacy-policy")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://ecomalyst.in/privacy-policy" },
+      { property: "og:url", content: url },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:url", content: "https://ecomalyst.in/privacy-policy" },
+      { name: "twitter:url", content: url },
     ],
-    links: [{ rel: "canonical", href: "https://ecomalyst.in/privacy-policy" }],
+    links: [{ rel: "canonical", href: url }],
   }),
   component: PrivacyPolicy,
 });
@@ -208,10 +209,10 @@ function PrivacyPolicy() {
               <p>
                 Phone:{" "}
                 <a
-                  href="tel:+919511266312"
+                  href={`tel:+${site.phoneDigits}`}
                   className="text-foreground underline-offset-4 hover:text-gold hover:underline"
                 >
-                  +91 95112 66312
+                  {site.phone}
                 </a>
               </p>
               <p>Location: India</p>

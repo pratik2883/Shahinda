@@ -1,6 +1,6 @@
 # Ecomalyst — Ecommerce Consulting
 
-Ecommerce consulting brand (ecomalyst.in). Ecommerce consultant with 11+ years of hands-on experience across marketplaces, D2C and ecommerce growth.
+Ecommerce consulting brand (www.ecomalyst.com). Ecommerce consultant with 11+ years of hands-on experience across marketplaces, D2C and ecommerce growth.
 
 ## Development
 

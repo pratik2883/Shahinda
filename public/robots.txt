@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://ecomalyst.in/sitemap.xml
+Sitemap: https://www.ecomalyst.com/sitemap.xml

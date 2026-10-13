@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { site } from "@/lib/site";
 import { Header } from "@/components/site/Header";
 import { FloatingWhatsApp } from "@/components/site/WhatsAppButton";
+import { ChecklistPopup } from "@/components/site/ChecklistPopup";
 import {
   Hero,
   About,
@@ -54,6 +55,7 @@ function Index() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <ChecklistPopup />
     </div>
   );
 }
