@@ -16,6 +16,8 @@ import {
   Mail,
   Phone,
   MapPin,
+  Instagram,
+  Facebook,
 } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { waLink } from "./WhatsAppButton";
@@ -609,6 +611,8 @@ export function Contact() {
   const items = [
     { icon: Mail, l: "Email", v: EMAIL, h: `mailto:${EMAIL}` },
     { icon: Phone, l: "Phone", v: PHONE, h: `tel:+${site.phoneDigits}` },
+    { icon: Instagram, l: "Instagram", v: "@shahin_ecomalyst", h: site.instagram },
+    { icon: Facebook, l: "Facebook", v: "Ecomalyst", h: site.facebook },
     { icon: MapPin, l: "Location", v: "India" },
   ];
   return (
@@ -656,7 +660,14 @@ export function Footer() {
     <footer className="border-t border-border py-12">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 sm:px-8 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-display text-xl font-semibold text-foreground">{site.brandName}</p>
+          <div className="flex items-center gap-2.5">
+            <img
+              src="/logo.jpg"
+              alt={site.brandName}
+              className="h-7 w-7 rounded-md object-contain shadow-xs"
+            />
+            <p className="font-display text-xl font-semibold text-foreground">{site.brandName}</p>
+          </div>
           <p className="mt-1 text-sm text-muted-foreground">
             Ecommerce Consultant &amp; Growth Specialist
           </p>
@@ -664,7 +675,25 @@ export function Footer() {
             Marketplace • D2C • Ecommerce Growth
           </p>
         </div>
-        <div className="flex flex-wrap gap-6 text-sm text-foreground">
+        <div className="flex flex-wrap items-center gap-6 text-sm text-foreground">
+          <a
+            href={site.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 hover:text-gold"
+          >
+            <Instagram className="h-4 w-4" />
+            <span>Instagram</span>
+          </a>
+          <a
+            href={site.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 hover:text-gold"
+          >
+            <Facebook className="h-4 w-4" />
+            <span>Facebook</span>
+          </a>
           <a href={`mailto:${EMAIL}`} className="hover:text-gold">
             Email
           </a>

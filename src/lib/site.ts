@@ -16,6 +16,9 @@ export const site = {
   phone: "+91 80078 77804",
   /** tel: / wa.me digits, no "+" or spaces */
   phoneDigits: "918007877804",
+  /** Social Media links */
+  instagram: "https://www.instagram.com/shahin_ecomalyst/",
+  facebook: "https://www.facebook.com/profile.php?id=61595078981378",
 } as const;
 
 /** Pre-filled WhatsApp deep link used by the floating widget and Final CTA button. */

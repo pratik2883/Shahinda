@@ -17,9 +17,14 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8 lg:h-20">
         <a
           href="#top"
-          className="font-display text-lg font-semibold tracking-tight text-foreground"
+          className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight text-foreground"
         >
-          {site.brandName}
+          <img
+            src="/logo.jpg"
+            alt={site.brandName}
+            className="h-8 w-8 rounded-lg object-contain shadow-xs"
+          />
+          <span>{site.brandName}</span>
         </a>
 
         <nav className="hidden items-center gap-9 md:flex">

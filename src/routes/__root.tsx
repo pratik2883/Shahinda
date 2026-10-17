@@ -99,8 +99,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Manrope:wght@400..600&display=swap",
       },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "alternate icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon-32x32.png", type: "image/png" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+    ],
+    scripts: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-C54SXQGGHE",
+        async: true,
+      },
+      {
+        children: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-C54SXQGGHE');
+        `,
+      },
+      {
+        children: `
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1575782630434501');
+          fbq('track', 'PageView');
+        `,
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -116,6 +145,15 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1575782630434501&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
